@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact - Tourism in Ghana</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>Contact Us</h1>
+    <img src="images/gh flag.png" alt="Ghana Flag">
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Ghana</a>
+    <a href="attractions.html">Attractions</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<div class="container">
+    <h2>Get in Touch</h2>
+   <section id="contact">
+    <form id="contactForm" onsubmit="sendWhatsApp(event)">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
+        <button type="submit">Send</button>
+    </form>
+</section>
+
+<script>
+function sendWhatsApp(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    // Get form values
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    // Your WhatsApp number in international format
+    const phone = "233538316309";
+
+    // Construct WhatsApp URL
+    const text = `Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
+    const url = `https://wa.me/${phone}?text=${text}`;
+
+    // Open WhatsApp link in a new tab
+    window.open(url, "_blank");
+}
+</script>
+
+</div>
+
+<footer>
+    &copy; 2026 Tourism in Ghana
+</footer>
+</body>
+</html>
